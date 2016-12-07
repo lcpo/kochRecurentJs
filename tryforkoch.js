@@ -1,13 +1,21 @@
-// parameters
-let p1x = 200;
-let p1y = 200 * Math.sqrt(3);
+// tryforkoch.js
+// adding parameters for starting and ending the curve.
 
-// from page
-var main_svg = document.getElementById("main_svg");
+
+// parameters
+let point0x = 200;
+let point0y = 15;
+let point1x = 350;
+let point1y = 500;
+
+// places in page
+const main_svg = document.getElementById("main_svg");
 
 
 // counted
 const wspolcz = Math.sqrt(3)/6;
+let p1x = point1x - point0x;
+let p1y = point1y - point0y;
 let p2x = p1x / 3;			// 1/3 the line
 let p2y = p1y / 3;
 let p3x = p1x * 2 / 3;		// 2/3 the line
@@ -16,17 +24,23 @@ let p4x = p1x / 2;			// middle of the line
 let p4y = p1y / 2;
 let p5x = p4x + (p1y * wspolcz);		// the interesting point
 let p5y = p4y - (p1x * wspolcz);
+let point2x = point0x + p2x;
+let point2y = point0y + p2y;
+let point3x = point0x + p3x;
+let point3y = point0y + p3y;
+let point5x = point0x + p5x;
+let point5y = point0y + p5y;
 
 
 let todraw = `
 	<path 
 		id="path1"
 		style="fill:none; stroke:#00f; stroke-width:2; stroke-opacity:1"
-		d="M 0,0
-			L ${p2x},${p2y}
-			L ${p5x},${p5y}
-			L ${p3x},${p3y}
-			L ${p1x},${p1y}
+		d="M ${point0x},${point0y}
+			L ${point2x},${point2y}
+			L ${point5x},${point5y}
+			L ${point3x},${point3y}
+			L ${point1x},${point1y}
 		"
 	/>
 `
