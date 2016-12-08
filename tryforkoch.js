@@ -3,7 +3,7 @@
 
 // places in page
 const main_svg = document.getElementById("main_svg");
-
+let draw = '';
 
 function kochRecurent(depth, funct, point0x, point0y, point1x, point1y) {
 	const wspolcz = Math.sqrt(3)/6;
@@ -37,34 +37,22 @@ function kochRecurent(depth, funct, point0x, point0y, point1x, point1y) {
 }
 
 
-function logpoints(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y) {
+function drawit(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y) {
 	console.log(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y);
-}
-
-
-kochRecurent(2, logpoints, 200,150, 300,500);
-
-
-
-
-
-
-
-/*
 	let todraw = `
 		<path 
-			id="path1"
-			style="fill:none; stroke:#00f; stroke-width:2; stroke-opacity:1"
-			d="M ${point0x},${point0y}
-				L ${point2x},${point2y}
-				L ${point5x},${point5y}
-				L ${point3x},${point3y}
-				L ${point1x},${point1y}
+			style="fill:none; stroke:#00f; stroke-width:1; stroke-opacity:1"
+			d="M ${k0x},${k0y}
+				L ${k1x},${k1y}
+				L ${k2x},${k2y}
+				L ${k3x},${k3y}
+				L ${k4x},${k4y}
 			"
 		/>
 	`;
-	return todraw;
+	draw += todraw;
 }
 
-main_svg.innerHTML = kochRecurent(2, funct, 200,150, 300,500);
-*/
+
+kochRecurent(4, drawit, 0,500, 512,500);
+main_svg.innerHTML = draw;
