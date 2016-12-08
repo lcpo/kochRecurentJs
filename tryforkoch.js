@@ -1,15 +1,14 @@
 // tryforkoch.js
 
 
-// main program
+// declarations
 const svg1 = document.getElementById("svg1");
 const svg2 = document.getElementById("svg2");
-
 let draw = '';
 let array_xy = [];
 
+
 function drawit1(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y) {
-//		console.log(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y);
 	let todraw = `
 		<path 
 			style="fill:none; stroke:#00f; stroke-width:1; stroke-opacity:1"
@@ -22,7 +21,7 @@ function drawit1(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y) {
 		/>
 `;
 	draw += todraw;
-}  // function drawit
+}  // function drawit1
 
 
 function fordrawit2(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y) {
