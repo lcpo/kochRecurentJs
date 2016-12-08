@@ -1,7 +1,7 @@
 // tryforkoch.js
 
 
-// places in page
+// global declarations
 const main_svg = document.getElementById("main_svg");
 let draw = '';
 
@@ -53,6 +53,8 @@ function drawit(k0x,k0y,k1x,k1y,k2x,k2y,k3x,k3y,k4x,k4y) {
 	draw += todraw;
 }
 
-
-kochRecurent(4, drawit, 0,500, 512,500);
+let myheight = 300 * Math.sqrt(3) / 2;
+kochRecurent(4, drawit, 100,100, 400,100);
+kochRecurent(4, drawit, 400,100, 250,100+myheight);
+kochRecurent(4, drawit, 250,100+myheight, 100,100);
 main_svg.innerHTML = draw;
